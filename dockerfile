@@ -19,4 +19,4 @@ RUN python3.11 -m pip install --upgrade pip && \
 
 EXPOSE 8808
 
-CMD ["python3.11", "app.py", "--host", "0.0.0.0", "--port", "8808", "--device", "cuda"]
+CMD ["python3.11", "app.py", "--port", "8808", "--device", "cuda"]
