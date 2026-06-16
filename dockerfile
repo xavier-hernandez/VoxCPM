@@ -18,7 +18,8 @@ RUN git clone https://github.com/OpenBMB/VoxCPM.git .
 
 RUN python3.11 -m pip install --upgrade pip && \
     python3.11 -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128 && \
-    python3.11 -m pip install -e .
+    python3.11 -m pip install -e . && \
+    python3.11 -m pip install --force-reinstall torchcodec --index-url https://download.pytorch.org/whl/cu128
 
 EXPOSE 8808
 
