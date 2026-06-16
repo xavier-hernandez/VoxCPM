@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV HF_HOME=/models/huggingface
@@ -14,7 +14,7 @@ WORKDIR /app
 RUN git clone https://github.com/OpenBMB/VoxCPM.git .
 
 RUN python3.11 -m pip install --upgrade pip && \
-    python3.11 -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu124 && \
+    python3.11 -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu128 && \
     python3.11 -m pip install -e .
 
 EXPOSE 8808
