@@ -6,7 +6,8 @@ ENV TRANSFORMERS_CACHE=/models/huggingface
 ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update && apt-get install -y \
-    python3.11 python3.11-venv python3-pip git ffmpeg libsndfile1 \
+    python3.11 python3.11-venv python3.11-dev python3-pip git ffmpeg libsndfile1 \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
