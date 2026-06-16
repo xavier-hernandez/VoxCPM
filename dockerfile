@@ -4,6 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV HF_HOME=/models/huggingface
 ENV TRANSFORMERS_CACHE=/models/huggingface
 ENV PYTHONUNBUFFERED=1
+# Disable torch.compile / Inductor JIT (fragile in-container; runs eagerly instead)
+ENV TORCHDYNAMO_DISABLE=1
 
 RUN apt-get update && apt-get install -y \
     python3.11 python3.11-venv python3.11-dev python3-pip git ffmpeg libsndfile1 \
